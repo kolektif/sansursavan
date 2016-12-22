@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Sansürsavan",
+    "version": "1.0.0",
+    "description": "Sansürlü sitelerin yeni adreslerine yönlendirir.",
+    "permissions": [
+        "storage",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "icons": {
+        "48": "icons/sansursavan-48.png",
+        "96": "icons/sansursavan-96.png"
+    }
+}
