@@ -4,8 +4,8 @@ var urlList = {},
         red: 'icons/sansursavan-browseraction-r-64.png',
     };
 
+chrome.storage.local.get('urlList', setWebRequestListener);
 
-chrome.storage.local.get('urlList', (result) => {
 chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
     if (!result.notRunningForTheFirstTime) {
         chrome.tabs.create({
@@ -18,13 +18,19 @@ chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
         });
     }
 });
+
+function setWebRequestListener(result) {
     if (!result.urlList) {
         getNewList();
         return;
     }
 
+    if (chrome.webRequest.onBeforeRequest.hasListener(redirect)) {
+        chrome.webRequest.onBeforeRequest.removeListener(redirect);
+    }
+
     urlList = result.urlList;
-    urlListArray = [];
+    var urlListArray = [];
 
     for (var i in urlList) {
         urlListArray.push('http://' + i + '/*');
@@ -38,7 +44,6 @@ chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
             urls: urlListArray
         }, ["blocking"]
     );
-});
 }
 
 function redirect(requestDetails) {
@@ -81,13 +86,20 @@ function redirect(requestDetails) {
 }
 
 function reqListener() {
+    urlList = JSON.parse(this.responseText);
+
+    setWebRequestListener({
+        urlList: urlList
+    });
+
     // write to storage
     chrome.storage.local.set({
-        urlList: JSON.parse(this.responseText)
+        urlList: urlList,
     });
 
     // reload extension to use new data
-    chrome.runtime.reload();
+    // chrome.runtime.reload();
+    // no we cannot reload. it is not supported FF < 51
 }
 
 function getNewList() {
