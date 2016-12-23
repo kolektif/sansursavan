@@ -1,6 +1,18 @@
 var urlList = {};
 
 chrome.storage.local.get('urlList', (result) => {
+chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
+    if (!result.notRunningForTheFirstTime) {
+        chrome.tabs.create({
+            url: 'welcome.html',
+            active: true,
+        });
+    } else {
+        chrome.storage.local.set({
+            notRunningForTheFirstTime: true
+        });
+    }
+});
     if (!result.urlList) {
         getNewList();
         return;
@@ -22,19 +34,7 @@ chrome.storage.local.get('urlList', (result) => {
         }, ["blocking"]
     );
 });
-
-chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
-    if (result.notRunningForTheFirstTime !== true) {
-        chrome.tabs.create({
-            url: 'welcome.html',
-            active: true,
-        });
-    } else {
-        chrome.storage.local.set({
-            notRunningForTheFirstTime: true
-        });
-    }
-});
+}
 
 function redirect(requestDetails) {
     let url = requestDetails.url,
