@@ -1,1 +1,1 @@
-A Firefox extension that cleans your Facebook feed from some special day celebrations such as "Cumhuriyet Bayramı", "10 Kasım".
+SansurSavan, Türkiye'deki sansürlü haber sitelerine erişebilmenizi sağlayan Chrome/Firefox eklentisidir.
