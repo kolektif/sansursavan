@@ -1,4 +1,9 @@
-var urlList = {};
+var urlList = {},
+    icons = {
+        green: 'icons/sansursavan-browseraction-g-64.png',
+        red: 'icons/sansursavan-browseraction-r-64.png',
+    };
+
 
 chrome.storage.local.get('urlList', (result) => {
 chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
@@ -50,8 +55,24 @@ function redirect(requestDetails) {
         return;
     } else if (urlList[censoredDomain] === 'proxy') {
         newUrl = 'http://proxy.sansursavan.org/index.php?url=' + url;
+        chrome.browserAction.setIcon({
+            path: icons.red,
+            tabId: requestDetails.tabId,
+        });
+        chrome.browserAction.setTitle({
+            title: 'Bu sayfayı vekil sunucu (proxy) bağlantısı ile geziyorsunuz',
+            tabId: requestDetails.tabId,
+        });
+        chrome.browserAction.setBadgeText({
+            text: 'prxy',
+            tabId: requestDetails.tabId,
+        });
     } else {
         newUrl = url.replace(censoredDomain, urlList[censoredDomain]);
+        chrome.browserAction.setBadgeText({
+            text: 'rdct',
+            tabId: requestDetails.tabId,
+        });
     }
 
     return {
