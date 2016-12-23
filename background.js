@@ -23,6 +23,19 @@ chrome.storage.local.get('urlList', (result) => {
     );
 });
 
+chrome.storage.local.get('notRunningForTheFirstTime', (result) => {
+    if (result.notRunningForTheFirstTime !== true) {
+        chrome.tabs.create({
+            url: 'welcome.html',
+            active: true,
+        });
+    } else {
+        chrome.storage.local.set({
+            notRunningForTheFirstTime: true
+        });
+    }
+});
+
 function redirect(requestDetails) {
     let url = requestDetails.url,
         a = document.createElement('a'),
