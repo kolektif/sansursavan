@@ -40,16 +40,52 @@ function setWebRequestListener(result) {
     }
 
     chrome.webRequest.onBeforeRequest.addListener(
-        redirect, {
-            urls: urlListArray
-        }, ["blocking"]
+        redirectToAsk, {
+            urls: urlListArray,
+            types: ['main_frame'],
+        }, ['blocking']
+    );
+
+    chrome.webRequest.onBeforeRequest.addListener(
+        redirectToUncensored, {
+            urls: urlListArray,
+            types: [
+                'sub_frame',
+                'stylesheet',
+                'script',
+                'image',
+                'object',
+                'xmlhttprequest',
+                'xbl',
+                'xslt',
+                'ping',
+                'beacon',
+                'xml_dtd',
+                'font',
+                'media',
+                'websocket',
+                'csp_report',
+                'imageset',
+                'web_manifest',
+                'other',
+            ],
+        }, ['blocking']
     );
 }
 
-function redirect(requestDetails) {
+function redirectToAsk(requestDetails) {
+    redirect(requestDetails, true);
+}
+
+function redirectToUncensored(requestDetails) {
+    redirect(requestDetails, false)
+}
+
+function redirect(requestDetails, askFirst) {
     let url = requestDetails.url,
         a = document.createElement('a'),
-        newUrl;
+        newUrl,
+        type;
 
     a.href = url;
 
@@ -60,6 +96,7 @@ function redirect(requestDetails) {
         return;
     } else if (urlList[censoredDomain] === 'proxy') {
         newUrl = 'http://proxy.sansursavan.org/index.php?url=' + url;
+        type = 'proxy';
         chrome.browserAction.setIcon({
             path: icons.red,
             tabId: requestDetails.tabId,
@@ -74,15 +111,28 @@ function redirect(requestDetails) {
         });
     } else {
         newUrl = url.replace(censoredDomain, urlList[censoredDomain]);
+        type = 'redirect';
         chrome.browserAction.setBadgeText({
             text: 'rdct',
             tabId: requestDetails.tabId,
         });
     }
 
-    return {
-        redirectUrl: newUrl
-    };
+    if (askFirst) {
+        var redirectUrl = '/' + type + '.html?newUrl=' + encodeURIComponent(newUrl) + '&oldUrl=' + encodeURIComponent(url);
+
+        chrome.tabs.update(requestDetails.tabId, {
+            url: redirectUrl,
+        });
+
+        return {
+            cancel: true,
+        };
+    } else {
+        return {
+            redirectUrl: newUrl,
+        };
+    }
 }
 
 function reqListener() {
