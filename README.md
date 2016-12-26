@@ -14,7 +14,9 @@ Bu noktada SansurSavan'ın 2 temel görevi vardır.
 
 `*` [Vekil sunucu](https://tr.wikipedia.org/wiki/Vekil_sunucu): http://proxy.sansursavan.org adresinde bulunan proxy sunucumuz, bir özgür yazılım olan [Php Proxy App](https://github.com/kolektif/php-proxy-app) ile çalışmaktadır. Nginx ile yayın yapılmaktadır ve sunucu üzerinde herhangi bir erişim bilgisi tutulmamaktadır. Ancak, güvenliğiniz için bir vekil sunucu kullanırken, parola gibi hassas bilgilerinizi hiç bir koşulda girmeyiniz ve vekil sunucuları sadece gezinme amaçlı kullanınız. 
 
+
 ## Bize çalışmalarımızda yardım edebilirsiniz
+
 
 Birinci önceliğimiz, sansüre uğramış haber sitelerinin listesinin oluşturulması ve güncelliğini korumasıdır. [Sansürlü siteler listemizi](https://github.com/kolektif/sansur-listesi/blob/master/liste.json) güncellememize yardımcı olabilirsiniz. 
 
