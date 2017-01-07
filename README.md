@@ -6,7 +6,7 @@ SansurSavan, Türkiye'deki sansürlü haber sitelerine erişebilmenizi sağlayan
 
 ## Nasıl Çalışır?
 
-![SansürSavan nasıl çalışır?](https://github.com/kolektif/sansursavan/blob/gh-pages/sansursavan.png)
+![SansürSavan nasıl çalışır?](https://github.com/kolektif/sansursavan/raw/gh-pages/sansursavan.png)
 
 Sansüre uğrayan haber siteleri, kimi zaman adreslerini (alan adı, domain) değiştirmekte, kimi zaman ise sansür altında aynı adresten yayınlarına devam etmektedir. Adresini değiştiren sitelere yeni adres üzerinden erişebilirken, adresini değiştirmeyen sitelere ise VPN/Proxy kullanmadan erişim sağlanamamaktadır.
 
