@@ -18,21 +18,20 @@ Bu noktada SansurSavan'ın 2 temel görevi vardır.
 
 2- Adresini değiştirmemiş siteleri, vekil sunucu* üzerinden yayınlar. Örneğin tarayıcınıza dokuz8haber.com adresini yazdığınızda, bu adresi SansurSavan'ın vekil sunucusu üzerinden geçirerek size ulaştırır.
 
-`*` [Vekil sunucu](https://tr.wikipedia.org/wiki/Vekil_sunucu): http://proxy.sansursavan.org adresinde bulunan proxy sunucumuz, bir özgür yazılım olan [Php Proxy App](https://github.com/kolektif/php-proxy-app) ile çalışmaktadır. Nginx ile yayın yapılmaktadır ve **sunucu üzerinde herhangi bir erişim bilgisi tutulmamaktadır, ancak Almanya'daki sunucu sağlayıcısının ne veri kaydettiği konusunda bilgimiz yoktur.**
+`*` [Vekil sunucu](https://tr.wikipedia.org/wiki/Vekil_sunucu): http://proxy.sansursavan.org adresinde bulunan proxy sunucumuz, bir özgür yazılım olan [Php Proxy App](https://github.com/kolektif/php-proxy-app) ile çalışmaktadır. **Proxy sunucumuz üzerinde herhangi bir erişim bilgisi (ip adresi, tarayıcı bilgisi vd.) _TUTULMAMAKTADIR_. Ancak proxy sunucumuzun bulunduğu Almanya'daki veri merkezinin erişim bilgisi kaydedip kaydetmediği hakkında bilgimiz yoktur.**
 
-Güvenliğiniz için bir vekil sunucu kullanırken, parola gibi hassas bilgilerinizi hiç bir koşulda girmeyiniz ve vekil sunucuları sadece gezinme amaçlı kullanınız.
+Güvenliğiniz için bir vekil sunucu kullanırken, parola gibi hassas bilgilerinizi hiç bir koşulda girmeyiniz ve vekil sunucuları _sadece gezinme amaçlı kullanınız_.
 
-## VPN varken ne gerek var?
+## Tunnelbear, Zenmate gibi VPN eklentilerinden farkı ne?
 
-VPN eklentileri kâr amacıyla kurulan şirketlerin ürünleridir. Bu ürünlerin geliştirilmesindeki başlıca amaç, internet kullanıcılarının sansürleri aşması değil, kâr etmektir. Tüm internet trafiğinizi böyle bir şirket üzerinden geçirmek, sizi bir **ürün** haline getirir. Bu sebeple herhangi bir ticari kaygı olmaksızın bu eklentiyi geliştirdik.
+VPN eklentileri kâr amacıyla kurulan şirketlerin ürünleridir. Bu ürünlerin geliştirilmesindeki başlıca amaç, internet kullanıcılarının sansürleri aşması değil, kâr etmektir. Tüm internet trafiğinizi böyle bir şirket üzerinden geçirmek, sizi bir **ürün** haline getirir. Bununla birlikte bu eklentilerin sizin hangi bilgilerinizi kayıt altına aldığı bilinmemektedir. Biz bu eklentiyi, herhangi bir ticari kaygı gözetmeden ve gizliliğinize önem vererek geliştirdik.
 
 ## Tor varken ne gerek var?
 
-Tor (https://torproject.org) hem gizlilik hem de sansürleri aşmak için harika. Ancak Tor Browser kurmak bazı internet kullanıcıları için zor veya zahmet verici olabiliyor. Bu sebeple daha basit şekilde bazı sansürlü sitelere girebilmek için bu eklentiyi geliştirdik. Eğer aktif olarak Tor kullanıyorsanız bu eklentiyi kullanmanıza gerek yoktur.
+Tor (https://torproject.org) hem gizlilik hem de sansürleri aşmak için harika. Ancak Tor Browser kurmak bazı internet kullanıcıları için zor veya zahmet verici olabiliyor. Bu sebeple daha basit şekilde **bazı** sansürlü sitelere girebilmek için bu eklentiyi geliştirdik. Eğer aktif olarak Tor kullanıyorsanız bu eklentiyi kullanmanıza gerek yoktur.
 
 ## Bize çalışmalarımızda yardım edebilirsiniz
 
-
 Birinci önceliğimiz, sansüre uğramış haber sitelerinin listesinin oluşturulması ve güncelliğini korumasıdır. [Sansürlü siteler listemizi](https://github.com/kolektif/sansur-listesi/blob/master/liste.json) güncellememize yardımcı olabilirsiniz. 
 
-SansurSavan'ın tüm çalışmaları özgür lisanslarla paylaşılmıştır. 
+SansurSavan'ın tüm çalışmaları özgür lisanslarla paylaşılmıştır. Tüm çalışmalarımıza (bu sitedeki metinlerin hazırlanması dahil) katkıda bulunabilirsiniz.
