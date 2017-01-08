@@ -2,6 +2,8 @@ Türkiye'de hemen her gün onlarca site sansüre uğruyor. Bu sansür furyasınd
 
 SansurSavan, Türkiye'deki sansürlü haber sitelerine erişebilmenizi sağlayan Chrome tarayıcı eklentisidir. Eklenti sayesinde, sansüre uğramış haber sitelerini gezebilir, bilgiye ve habere erişiminizin engellenmesini aşabilirsiniz.
 
+[![Chrome/Chromium tarayıcınıza yüklemek için tıklayın](https://github.com/kolektif/sansursavan/raw/gh-pages/chrome_web_store_logo.png)](https://chrome.google.com/webstore/detail/sans%C3%BCrsavan/iadmdopibichlaibpedpolfemeapmhdn)
+
 [**Chrome/Chromium tarayıcınıza yüklemek için tıklayın**](https://chrome.google.com/webstore/detail/sans%C3%BCrsavan/iadmdopibichlaibpedpolfemeapmhdn)
 
 (Eklentimiz Firefox için henüz onay sürecindedir.) 
@@ -20,7 +22,7 @@ Bu noktada SansurSavan'ın 2 temel görevi vardır.
 
 2- Adresini değiştirmemiş siteleri, vekil sunucu* üzerinden yayınlar. Örneğin tarayıcınıza dokuz8haber.com adresini yazdığınızda, bu adresi SansurSavan'ın vekil sunucusu üzerinden geçirerek size ulaştırır.
 
-`*` [Vekil sunucu](https://tr.wikipedia.org/wiki/Vekil_sunucu): http://proxy.sansursavan.org adresinde bulunan proxy sunucumuz, bir özgür yazılım olan [Php Proxy App](https://github.com/kolektif/php-proxy-app) ile çalışmaktadır. **Proxy sunucumuz üzerinde herhangi bir erişim bilgisi (ip adresi, tarayıcı bilgisi vd.) _TUTULMAMAKTADIR_. Ancak proxy sunucumuzun bulunduğu Almanya'daki veri merkezinin erişim bilgisi kaydedip kaydetmediği hakkında bilgimiz yoktur.**
+`*` [Vekil(Proxy) sunucu](https://tr.wikipedia.org/wiki/Vekil_sunucu): http://proxy.sansursavan.org adresinde bulunan vekil(proxy) sunucumuz, bir özgür yazılım olan [Php Proxy App](https://github.com/kolektif/php-proxy-app) ile çalışmaktadır. **Proxy sunucumuz üzerinde herhangi bir erişim bilgisi (ip adresi, tarayıcı bilgisi vd.) _TUTULMAMAKTADIR_. Ancak proxy sunucumuzun bulunduğu Almanya'daki veri merkezinin erişim bilgisi kaydedip kaydetmediği hakkında bilgimiz yoktur.**
 Güvenliğiniz için bir vekil sunucu kullanırken, parola gibi hassas bilgilerinizi hiç bir koşulda girmeyiniz ve vekil sunucuları _sadece gezinme amaçlı kullanınız_.
 
 ## Tunnelbear, Zenmate gibi VPN eklentilerinden farkı ne?
